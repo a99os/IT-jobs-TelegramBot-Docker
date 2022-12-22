@@ -2,14 +2,15 @@
   "name": "79-dars-itjobs-telegrambot",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "main.js",
+  "type": "module",
   "scripts": {
     "prebuild": "rimraf ./build",
     "dev": "npx nodemon",
     "build": "npm run prebuild && npx tsc",
     "start": "npm run build && node build/main",
     "lint": "npx eslint ./src",
-    "format": "spx eslint ./src --fix"
+    "format": "npx eslint ./src --fix"
   },
   "repository": {
     "type": "git",
