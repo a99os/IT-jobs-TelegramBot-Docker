@@ -4,10 +4,16 @@
   "description": "",
   "main": "main.js",
   "type": "module",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run format"
+    }
+  },
   "scripts": {
     "prebuild": "rimraf ./build",
     "dev": "npx nodemon",
-    "build": "npm run prebuild && npx tsc",
+    "build": "  ",
     "start": "npm run build && node build/main",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix"
