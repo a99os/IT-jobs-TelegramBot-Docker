@@ -16,7 +16,7 @@ composer.start(async (ctx) => {
     await User.create({
       user_id: new_user_id,
       username,
-      first_name,
+      first_name, 
       last_name,
     });
     await selectLang(ctx);
@@ -35,7 +35,7 @@ composer.start(async (ctx) => {
     } else if (lang === 'RUS') {
       await ctx.reply(`<b>Главная страница!</b>`, {
         parse_mode: 'HTML',
-        ...Markup.keyboard([['🔍 Посмотреть объявление', '📣 Подать объявление']])
+        ...Markup.keyboard([['🔍 Посмотреть объявление', '📣 Подать обявления']])
           .oneTime()
           .resize(),
       });
