@@ -1,4 +1,5 @@
 import { Context, Markup } from 'telegraf';
+import { keyboards } from './keyboards.js';
 
 export async function menu_elon_Uzb(ctx: Context) {
   await ctx.reply(`<b>Yangi e'lon qo'shish</b> tugmasini bosing 👇🏽`, {
@@ -24,3 +25,18 @@ export async function menu_elon_Rus(ctx: Context) {
       .resize(),
   });
 }
+
+export async function inlineMenuElonBerish(ctx: Context, inlineElonText: string) {
+  return await ctx.reply(inlineElonText, {
+    parse_mode: 'HTML',
+    ...keyboards['inline_menu_elon_berish'],
+  });
+}
+
+export async function inlineMenuElonBerishRus(ctx: Context, inlineElonText: string) {
+  return await ctx.reply(inlineElonText, {
+    parse_mode: 'HTML',
+    ...keyboards['inline_menu_elon_berish_rus'],
+  });
+}
+

@@ -1,6 +1,6 @@
 import { User } from '../models/user.model.js';
 import { bot } from '../core/bot.js';
-import { Composer, Markup, Context } from 'telegraf';
+import { Composer, Markup } from 'telegraf';
 import { selectLang } from '../libs/lang.js';
 
 const composer = new Composer();
