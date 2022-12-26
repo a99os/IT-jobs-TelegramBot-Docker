@@ -1,4 +1,4 @@
-import { Markup } from 'telegraf';
+import { Markup } from 'telegraf'
 
 export const keyboards = {
   inline_menu_elon_berish_rus: Markup.inlineKeyboard([
@@ -66,4 +66,4 @@ export const keyboards = {
     [Markup.button.callback('ТЕ, КТО ИЩЕТ ПРОЕКТА', 'loyiha1')],
     [Markup.button.callback('ВЕРНУТЬСЯ НА ГЛАВНУЮ СТРАНИЦУ', 'asosiy1')],
   ]),
-};
+}

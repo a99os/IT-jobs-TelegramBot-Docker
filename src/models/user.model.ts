@@ -1,6 +1,5 @@
-import { DataTypes } from 'sequelize';
-import { sequelize } from '../core/db.js';
-
+import { sequelize } from '../core/db.js'
+import { DataTypes } from 'sequelize'
 export const User = sequelize.define('user', {
   id: {
     type: DataTypes.INTEGER,
@@ -16,4 +15,4 @@ export const User = sequelize.define('user', {
   last_state: { type: DataTypes.STRING },
   user_lang: { type: DataTypes.STRING },
   tg_link: { type: DataTypes.STRING },
-});
+})

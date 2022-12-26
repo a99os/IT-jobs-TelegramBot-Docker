@@ -1,6 +1,6 @@
-import { Ads } from '../models/ads.model.js';
-import { Context } from 'telegraf';
-import { Op } from 'sequelize';
+import { Ads } from '../models/ads.model.js'
+import { Context } from 'telegraf'
+import { Op } from 'sequelize'
 
 export async function see_elon(ctx: Context, selectedCategory: string, lang: string, offset: number) {
   const elon = await Ads.findAll({
@@ -8,16 +8,16 @@ export async function see_elon(ctx: Context, selectedCategory: string, lang: str
     order: [['id', 'ASC']],
     offset: offset,
     limit: 1,
-  });
+  })
   if (!elon || elon.length == 0) {
-    if (lang === 'UZB') await ctx.reply(`Tanlangan bo'limda boshqa faol e'lon yo'q`);
-    else await ctx.reply(`В выбранном разделе нет больше активное объявление`);
+    if (lang === 'UZB') await ctx.reply(`Tanlangan bo'limda boshqa faol e'lon yo'q`)
+    else await ctx.reply(`В выбранном разделе нет больше активное объявление`)
   } else {
     elon.forEach(async (element) => {
       try {
-        let txt = '';
-        if (lang === 'UZB') txt = `Keyingi elonni ko'rish ➡️ `;
-        else txt = `См. следующую объявлению ➡️ `;
+        let txt = ''
+        if (lang === 'UZB') txt = `Keyingi elonni ko'rish ➡️ `
+        else txt = `См. следующую объявлению ➡️ `
         await ctx.telegram
           .copyMessage(String(ctx?.from?.id), String(process.env.CHANEL), Number(element.post_id), {
             reply_markup: {
@@ -32,11 +32,11 @@ export async function see_elon(ctx: Context, selectedCategory: string, lang: str
               ],
             },
           })
-          .then();
+          .then()
       } catch (error) {
-        console.log(error);
-        console.log('xatolik-Мои скидки11');
+        console.log(error)
+        console.log('xatolik-Мои скидки11')
       }
-    });
+    })
   }
 }

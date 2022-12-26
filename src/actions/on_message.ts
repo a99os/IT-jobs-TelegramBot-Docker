@@ -346,7 +346,7 @@ composer.on('message', async (ctx) => {
           await menuTasdiqlash(ctx);
         } else {
           await ctx.replyWithHTML('Ввод данных объявления завершен!');
-          await menuTasdiqlash(ctx);
+          await menuTasdiqlashRus(ctx);
         }
       } else {
         if (lang === 'UZB') {
@@ -479,8 +479,8 @@ composer.action(/.+/, async (ctx) => {
       let post;
       if (photo_path != '') {
         if (ads.length < 950) {
-          ads += `\n\n👍 @UzbekDev_IT_Jobs`;
-          ads += `\n\n🤖 @UzbekDev_IT_Jobs_Bot`;
+          ads += `\n\n👍 @devjobs_itjobs`;
+          ads += `\n\n🤖 @devjobs_itjobs_bot`;
         }
         post = await ctx.telegram.sendPhoto(
           String(process.env.CHANE),
@@ -493,8 +493,8 @@ composer.action(/.+/, async (ctx) => {
         ctx.editMessageCaption('Tasdiqlandi');
       } else if (doc_path != '') {
         if (ads.length < 950) {
-          ads += `\n\n👍 @UzbekDev_IT_Jobs`;
-          ads += `\n\n🤖 @UzbekDev_IT_Jobs_Bot`;
+          ads += `\n\n👍 @devjobs_itjobs`;
+          ads += `\n\n🤖 @devjobs_itjobs_bot`;
         }
         post = await ctx.telegram.sendDocument(
           String(process.env.CHANEL),
@@ -506,8 +506,8 @@ composer.action(/.+/, async (ctx) => {
         );
         ctx.editMessageCaption('Tasdiqlandi');
       } else {
-        ads += `\n\n👍 @UzbekDev_IT_Jobs`;
-        ads += `\n\n🤖 @UzbekDev_IT_Jobs_Bot`;
+        ads += `\n\n👍 @devjobs_itjobs`;
+        ads += `\n\n🤖 @devjobs_itjobs_bot`;
 
         post = await ctx.telegram.sendMessage(String(process.env.CHANEL), ads, {
           parse_mode: 'HTML',
@@ -515,7 +515,7 @@ composer.action(/.+/, async (ctx) => {
         ctx.editMessageText('Tasdiqlandi');
       }
 
-      await ctx.telegram.sendMessage(`${elon.user_id}`, `${msgText} https://t.me/UzbekDev_IT_Jobs/${post.message_id}`, {
+      await ctx.telegram.sendMessage(`${elon.user_id}`, `${msgText} https://t.me/devjobs_itjobs/${post.message_id}`, {
         parse_mode: 'HTML',
       });
       elon.post_id = String(post.message_id);
