@@ -483,7 +483,7 @@ composer.action(/.+/, async (ctx) => {
           ads += `\n\n🤖 @devjobs_itjobs_bot`;
         }
         post = await ctx.telegram.sendPhoto(
-          String(process.env.CHANE),
+          String(process.env.CHANEL),
           { url: photo_path },
           {
             caption: ads,
